@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.asimikram.batterytest_new">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Pro Battery"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".BatteryTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <uses-permission
+            android:name="android.permission.PACKAGE_USAGE_STATS"
+            tools:ignore="ProtectedPermissions" />
+
+        <service
+            android:name=".BatteryService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".LocationService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".RunningApps" />
+
+        <service
+            android:name=".MainService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".RunningAppsService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".PluggedInService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".BatteryLevel" />
+
+        <service
+            android:name=".PluggedOutService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>
